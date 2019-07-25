@@ -1,2 +1,2 @@
 # gait
-A Vehicle Intelligence App for General Motor Vehicles.
+A Vehicle Intelligence App for General Motors Vehicles.

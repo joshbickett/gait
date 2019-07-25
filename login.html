@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Newton</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/app.css" type="text/css">
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+
+    <script src="GMLIB/system.js"></script>
+    <script src="GMLIB/info.js"></script>
+    <script src="GMLIB/comm.js"></script>
+
+    <script src="js/helpers.js"></script>
+    <script src="js/state.js"></script>
+
+    <!-- classes -->
+    <script defer src="js/library/odometer.js"></script>
+    <script defer src="js/library/profile.js"></script>
+    <script defer src="js/library/vehicle.js"></script>
+    <script defer src="js/library/user.js"></script>
+    <!-- classes end -->
+
+    <script defer src="js/nonStationary.js"></script>
+    <script defer src="js/auth.js"></script>
+
+  </head>
+  <body>
+
+    <div id="stationary-view" class="container-fluid">
+
+      <div id="top-bar-placeholder">
+        <div class="row">
+          <div class="col-sm-12 no-padding">
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark placeholder-nav">
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <script>
+      $(function(){
+          $("#top-bar-placeholder").load("top-bar-non-auth.html");
+      });
+      </script>
+
+      <div class="row">
+        <div class="col-sm-12 space">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-3 left-side">
+        </div>
+
+        <div class="col-sm-6">
+          <div class="row auth-selection-container">
+            <div class="col-sm-6 auth-selection">
+              <a href="signup.html" class="center-text not-active bg-primary text-white">SIGN UP</a>
+            </div>
+            <div class="col-sm-6 auth-selection">
+              <a href="login.html" class="center-text bg-primary bold text-white">LOG IN</a>
+            </div>
+          </div>
+
+          <form action="/login.html" id="login">
+            <div class="row">
+              <div class="col-sm-12">
+                <h2 class="center-text padding-general">Welcome Back!</h2>
+              </div>
+            </div>
+
+            <div id="alert">
+            </div>
+
+            <div class="form-group row">
+             <div class="col-sm-12">
+               <input class="form-control disabled" id="vin" disabled>
+             </div>
+           </div>
+
+            <div class="form-group row">
+             <div class="col-sm-12">
+               <input class="form-control" id="email" placeholder="Email" required>
+             </div>
+           </div>
+
+           <div class="form-group row">
+             <div class="col-sm-12">
+               <input type="password" class="form-control" id="password" placeholder="Password" required>
+             </div>
+           </div>
+
+           <div class="form-group row">
+             <div class="col-sm-12 flex-center">
+               <button type="submit" class="btn btn-primary auth-btn bold">LOG IN</button>
+             </div>
+           </div>
+          </form>
+        </div>
+        <div class="col-sm-3 right-side">
+        </div>
+      </div>
+    </div>
+
+    <div id="non-stationary-view" class="container-fluid" style="display:none;">
+    </div>
+
+    <script>
+    $(function(){
+      $("#non-stationary-view").load("non-stationary.html");
+    });
+    </script>
+
+  </body>
+</html>

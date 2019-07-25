@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Newton</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/app.css" type="text/css">
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+
+    <script src="GMLIB/system.js"></script>
+    <script src="GMLIB/info.js"></script>
+    <script src="GMLIB/comm.js"></script>
+
+    <script src="js/helpers.js"></script>
+    <script src="js/state.js"></script>
+
+    <!-- classes -->
+    <script defer src="js/library/odometer.js"></script>
+    <script defer src="js/library/profile.js"></script>
+    <script defer src="js/library/vehicle.js"></script>
+    <script defer src="js/library/user.js"></script>
+    <!-- classes end -->
+
+    <script defer src="js/redirect.js"></script>
+    <script defer src="js/nonStationary.js"></script>
+    <script defer src="js/settings.js"></script>
+
+  </head>
+  <body>
+
+    <div id="stationary-view" class="container-fluid">
+      <div id="top-bar-placeholder">
+        <div class="row">
+          <div class="col-sm-12 no-padding">
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark placeholder-nav">
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <script>
+      $(function(){
+        $("#top-bar-placeholder").load("top-bar.html");
+      });
+      </script>
+
+      <div class="row" style="color: white;margin-bottom: 10px; ">
+        <div class="col-sm-4 bg-secondary sub-header">
+          <h2>SETTINGS</h2>
+        </div>
+        <div class="col-sm-8">
+        </div>
+      </div>
+
+      <div id="alert">
+      </div>
+
+      <div class="row">
+        <div class="col-sm-9 setting">
+          <table class="table">
+            <thead class="thead-light">
+              <tr>
+                <th>
+                  Category
+                </th>
+                <th>
+                </th>
+              </tr>
+            </thead>
+            <tr>
+              <td style="vertical-align: middle;">
+                Monitor Miles
+              </td>
+              <td class="flex-center" style="vertical-align: middle;">
+                <p style="vertical-align: middle;">
+                  Off
+                </p>
+                <!-- Rounded switch -->
+                <label class="switch">
+                  <input type="checkbox" id="monitor-indicator">
+                  <span class="slider round"></span>
+                </label>
+                <p style="vertical-align: middle;">
+                  On
+                </p>
+                </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: middle;">
+                  Delete Account
+                </td>
+                <td class="flex-center" style="vertical-align: middle;">
+                  <button type="button" id="delete-data-button" class="btn btn-outline-danger">DELETE</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <button type="button" id="sign-out" class="btn btn-primary">Sign Out</button>
+                </td>
+                <td>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="col-sm-3">
+          </div>
+        </div>
+      </div>
+
+      <div id="non-stationary-view" class="container-fluid" style="display:none;">
+      </div>
+
+      <script>
+      $(function(){
+        $("#non-stationary-view").load("non-stationary.html");
+      });
+      </script>
+
+  </body>
+</html>

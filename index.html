@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Newton</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/app.css" type="text/css">
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+
+    <script src="GMLIB/system.js"></script>
+    <script src="GMLIB/info.js"></script>
+    <script src="GMLIB/comm.js"></script>
+
+    <script src="js/helpers.js"></script>
+    <script src="js/state.js"></script>
+
+    <!-- classes -->
+    <script defer src="js/library/odometer.js"></script>
+    <script defer src="js/library/profile.js"></script>
+    <script defer src="js/library/vehicle.js"></script>
+    <script defer src="js/library/user.js"></script>
+    <!-- classes end -->
+
+    <script defer src="js/redirect.js"></script>
+    <script defer src="js/nonStationary.js"></script>
+    <script defer src="js/app.js"></script>
+
+  </head>
+  <body>
+
+    <div id="stationary-view" class="container-fluid">
+      <div id="top-bar-placeholder">
+        <div class="row">
+          <div class="col-sm-12 no-padding">
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark placeholder-nav">
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <script>
+      $(function(){
+        $("#top-bar-placeholder").load("top-bar.html");
+      });
+      </script>
+
+      <div class="row" style="color: white;margin-bottom: 10px; ">
+        <div class="col-sm-4 bg-secondary sub-header">
+          <h2>DRIVER PROFILE</h2>
+        </div>
+        <div class="col-sm-8">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-7">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>
+                  Odometer
+                </th>
+                <th id="total-mileage" class="text-secondary" style="font-weight:normal;">
+                </th>
+                <th>
+                </th>
+              </tr>
+            </thead>
+            <thead class="thead-light">
+              <tr>
+                <th>
+                  Average Miles
+                </th>
+                <th>
+                  Your Car
+                </th>
+                <th>
+                  National (USA)
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td class="sub-data">
+                  Daily
+                </td >
+                <td id="daily-average" class="text-secondary">
+                  -
+                </td>
+                <td id="daily-national" class="text-secondary">
+                  -
+                </td>
+              </tr>
+              <tr>
+                <td class="sub-data">
+                  Weekly
+                </td >
+                <td id="weekly-average" class="text-secondary">
+                  -
+                </td>
+                <td id="weekly-national" class="text-secondary">
+                  -
+                </td>
+              </tr>
+              <tr>
+                <td class="sub-data">
+                  Monthly
+                </td >
+                <td id="monthly-average" class="text-secondary">
+                  -
+                </td>
+                <td id="monthly-national" class="text-secondary">
+                  -
+                </td>
+              </tr>
+              <tr>
+                <td class="sub-data">
+                  Yearly
+                </td>
+                <td id="yearly-average" class="text-secondary">
+                  -
+                </td>
+                <td id="yearly-national" class="text-secondary">
+                  -
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="col-sm-5">
+          <div id="summary-container">
+            <div style="font-weight:bold;">
+              Summary
+            </div>
+            <div id="drive-summary">
+              Waiting for more data... As you drive more the system will learn more. There is even the possibility to save on car insurance!
+            </div>
+          </div>
+          <div id="summary-notification" style="display:none;">
+          </div>
+          <div class="flex-center" style="vertical-align: middle;">
+            <button type="button" id="estimate-details-btn" class="btn btn-primary" style="display:none;">Get Estimate</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="non-stationary-view" class="container-fluid" style="display:none;">
+    </div>
+
+    <script>
+    $(function(){
+      $("#non-stationary-view").load("non-stationary.html");
+    });
+    </script>
+
+  </body>
+</html>
